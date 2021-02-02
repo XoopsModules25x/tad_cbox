@@ -1,16 +1,13 @@
 <?php
-include "../../mainfile.php";
-include "function.php";
+require dirname(dirname(__DIR__)) . '/mainfile.php';
+require __DIR__ . '/function.php';
 
-
-$isAdmin=false;
+$isAdmin = false;
 if ($xoopsUser) {
     $module_id = $xoopsModule->getVar('mid');
-    $isAdmin=$xoopsUser->isAdmin($module_id);
+    $isAdmin = $xoopsUser->isAdmin($module_id);
 }
 
-if($isAdmin){
-    $interface_menu[_TO_ADMIN_PAGE]="admin/main.php";
+if ($isAdmin) {
+    $interface_menu[_TO_ADMIN_PAGE] = 'admin/main.php';
 }
-
-?>
